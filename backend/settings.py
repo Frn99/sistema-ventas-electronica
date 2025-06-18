@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'productos', # Nuestra nueva app
 ]
 
 MIDDLEWARE = [
@@ -74,8 +75,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sistema_ventas_db',
+        'USER': 'ventas_user',
+        'PASSWORD': 'P@nchi1999', # ¡IMPORTANTE! Usa la contraseña que creaste en el paso anterior.
+        'HOST': 'localhost', # O la IP del servidor de la base de datos si fuera remoto
+        'PORT': '5432',
     }
 }
 
